@@ -1,0 +1,608 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212;
+  color: #f5f5f5;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f1f1f;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #f97316;
+  letter-spacing: 2px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.menu li a {
+  color: #f5f5f5;
+  transition: color 0.3s;
+}
+
+.menu li a:hover {
+  color: #f97316;
+}
+
+#cartButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #f5f5f5;
+  transition: transform 0.2s;
+}
+.cart-count {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background-color: #f97316;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+
+#cartButton:hover {
+  transform: scale(1.2);
+}
+
+/* Banner */
+.banner {
+  position: relative;
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #1e1e1e;
+}
+
+.banner img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  opacity: 0.6;
+  border-radius: 8px;
+}
+
+.banner button {
+  background-color: #f97316;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  animation: pulse 2s infinite;
+  margin-top: 1.5rem;
+}
+
+.banner button:hover {
+  background-color: #ea580c;
+}
+
+/* Produtos */
+.produtos {
+  padding: 2rem;
+  text-align: center;
+}
+
+.produtos h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #f97316;
+}
+
+.grid-produtos {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.produto {
+  background-color: #1e1e1e;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.produto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.produto img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.produto h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #f5f5f5;
+}
+
+.produto p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
+.botao-compra {
+  display: inline-block;
+  background-color: #f97316;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.botao-compra:hover {
+  background-color: #ea580c;
+}
+
+/* Footer */
+footer {
+  background-color: #1f1f1f;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  color: #777;
+}
+
+.banner.parallax {
+  background-image: url("modelos GW/Modelo GW 2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: background-image 1s ease-in-out;
+}
+
+.banner-content {
+  z-index: 2;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.banner-content h1 {
+  font-size: 3.5rem;
+  background: linear-gradient(90deg, #f97316, #facc15);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: neonText 2s ease-in-out infinite alternate;
+  margin-bottom: 1rem;
+}
+
+.banner-content p {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes neonText {
+  from {
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #facc15;
+  }
+  to {
+    text-shadow: 0 0 20px #f97316, 0 0 30px #facc15;
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.cart-total {
+  text-align: right;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: #f97316;
+}
+
+.cart-item {
+  background-color: #2a2a2a;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-radius: 6px;
+}
+
+.cart-item button {
+  margin-top: 0.5rem;
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.cart-sidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: #1e1e1e;
+  color: #fff;
+  padding: 1rem;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.cart-sidebar.show {
+  transform: translateX(0);
+}
+
+#cartContent {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 1rem;
+}
+.notificacao {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #f97316;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px);
+  transition: all 0.4s ease;
+  z-index: 1001;
+}
+
+.notificacao.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
+.banner.parallax {
+  transition: background-image 1s ease-in-out;
+}
+.sobre-banner img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 400px;
+  display: block;
+}
+
+.timeline {
+  background-color: #1e1e1e;
+  padding: 3rem 2rem;
+  color: #f5f5f5;
+}
+
+.timeline h2 {
+  text-align: center;
+  color: #f97316;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.timeline ul {
+  list-style: none;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 1rem;
+}
+
+.timeline li {
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.timeline li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #f97316;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.timeline span {
+  font-weight: bold;
+  color: #facc15;
+}
+
+.redes {
+  background-color: #121212;
+  padding: 2rem;
+  text-align: center;
+}
+
+.redes h2 {
+  font-size: 2rem;
+  color: #f97316;
+  margin-bottom: 1rem;
+}
+
+.redes-links a {
+  display: inline-block;
+  margin: 0.5rem 1rem;
+  color: #f5f5f5;
+  background-color: #1f1f1f;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.redes-links a:hover {
+  background-color: #f97316;
+  color: #fff;
+}
+.pagina-produto {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.produto-detalhes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 900px;
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.produto-detalhes img {
+  max-width: 400px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.produto-detalhes .info {
+  flex: 1;
+}
+
+.produto-detalhes h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #f97316;
+}
+
+.produto-detalhes p {
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
+.tamanhos button {
+  margin-right: 0.5rem;
+  background-color: #333;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tamanhos button:hover {
+  background-color: #f97316;
+}
+.tamanhos button.selecionado {
+  background-color: #f97316;
+  color: white;
+  font-weight: bold;
+}
+/* ... código existente ... */
+
+/* Estilo da descrição completa do produto */
+.descricao-completa {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  color: #f5f5f5;
+  line-height: 1.6;
+}
+
+.descricao-completa h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #f97316;
+  border-bottom: 2px solid #f97316;
+  padding-bottom: 0.5rem;
+}
+
+.descricao-completa h3 {
+  margin-top: 2rem;
+  color: #facc15;
+  font-size: 1.3rem;
+}
+
+.descricao-completa p {
+  margin-bottom: 1rem;
+}
+
+.descricao-completa ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.descricao-completa ul li {
+  list-style: disc;
+  margin-bottom: 0.5rem;
+}
+
+.descricao-completa table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.descricao-completa th,
+.descricao-completa td {
+  padding: 0.75rem;
+  border: 1px solid #444;
+  text-align: center;
+}
+
+.descricao-completa th {
+  background-color: #333;
+  color: #f97316;
+}
+
+.descricao-completa tr:nth-child(even) {
+  background-color: #2a2a2a;
+}
+
+
+
+/* ... manter os estilos anteriores ... */
+/* ... código existente ... */
+
+.pagina-produto {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.imagem-produto-topo {
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.imagem-produto-topo img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  animation: fadeInZoom 0.6s ease-in-out both;
+  transition: transform 0.3s ease;
+}
+
+.imagem-produto-topo img:hover {
+  transform: scale(1.02);
+}
+
+.produto-detalhes {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.produto-detalhes .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.produto-detalhes h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #f97316;
+}
+
+.produto-detalhes p {
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
+.tamanhos button {
+  margin-right: 0.5rem;
+  background-color: #333;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tamanhos button:hover {
+  background-color: #f97316;
+}
+
+.tamanhos button.selecionado {
+  background-color: #f97316;
+  color: white;
+  font-weight: bold;
+}
+
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
