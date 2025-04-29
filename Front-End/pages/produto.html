@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Produto - Great Works</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">GREAT WORKS</div>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+    <button id="cartButton">🛒<span id="cartCount" class="cart-count">0</span></button>
+  </header>
+
+<!-- Carrinho lateral -->
+<div id="cartSidebar" class="cart-sidebar">
+  <h3>Seu Carrinho</h3>
+  <div id="cartContent"></div>
+  <div id="cartTotal" class="cart-total">Total: R$ 0,00</div>
+  <div class="buttons-container">
+    <button id="checkoutButton">Fechar Pedido</button>
+    <button id="closeCart">Fechar Janela</button>
+  </div>
+</div>
+
+  <!-- Notificação -->
+  <div id="notificacao" class="notificacao">Item adicionado ao carrinho!</div>
+
+  <main class="pagina-produto">
+    <div class="produto-detalhes">
+      <img id="produtoImagem" src="" alt="Produto" />
+      <div class="info">
+        <h1 id="produtoNome"></h1>
+        <p id="produtoPreco"></p>
+        <p id="produtoDescricao">Estilo único, qualidade street. Escolha seu tamanho:</p>
+
+        <div class="tamanhos">
+          <button>P</button>
+          <button>M</button>
+          <button>G</button>
+          <button>GG</button>
+        </div>
+
+        <a href="#" class="botao-compra" id="botaoComprar">Adicionar ao Carrinho</a>
+      </div>
+    </div>
+
+    <!-- Descrição Detalhada -->
+    <section class="descricao-completa">
+      <h2>Descrição completa</h2>
+
+
+      <h3>Camiseta Streetwear Great Works</h3>
+      <p>A Camiseta Streetwear é a escolha perfeita para quem busca qualidade, conforto e um ótimo custo-benefício. Produzida em 100% algodão malha fio 30.1 penteado exclusivo, proporciona um toque macio e respirável.</p>
+      <p>Com modelagem streetwear, possui medidas mais amplas no comprimento, garantindo um caimento moderno e estiloso. A gola em anel de 2,7 cm com ribana canelada 2x1 e o reforço ombro a ombro oferecem mais resistência e durabilidade.</p>
+      <p>Uma excelente opção para quem deseja iniciar a produção da sua marca com um produto versátil e de alta qualidade.</p>
+
+      <h3>Atenção</h3>
+      <ul>
+        <li>As fotos podem apresentar variações de cor devido à iluminação e ao dispositivo</li>
+        <li>As medidas das peças podem ter pequenas variações</li>
+        <li>Em produtos de algodão, pode ocorrer encolhimento de 3% a 5% após a lavagem</li>
+      </ul>
+
+      <h3>Especificações Técnicas</h3>
+      <ul>
+        <li>Composição: 100% algodão fio 30.1 penteado</li>
+        <li>Gramatura: 180 g/m²</li>
+        <li>Gola: Anel de 2,7 cm, ribana canelada 2×1 com elastano e pesponto de 2 agulhas</li>
+        <li>Reforço: Ombro a ombro para maior durabilidade</li>
+        <li>Acabamento: Bainha de 2 cm</li>
+        <li>Etiqueta interna: Composição e tamanho</li>
+      </ul>
+
+      <h3>Tabela de Medidas</h3>
+      <table>
+        <thead>
+          <tr><th>Tamanho</th><th>Largura</th><th>Comprimento</th><th>Manga</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>PP</td><td>53 cm</td><td>71 cm</td><td>22 cm</td></tr>
+          <tr><td>P</td><td>55 cm</td><td>73 cm</td><td>23 cm</td></tr>
+          <tr><td>M</td><td>57 cm</td><td>75 cm</td><td>24 cm</td></tr>
+          <tr><td>G</td><td>59 cm</td><td>77 cm</td><td>25 cm</td></tr>
+          <tr><td>GG</td><td>61 cm</td><td>79 cm</td><td>26 cm</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Recomendações de Conservação</h3>
+      <ul>
+        <li>Lavar à mão ou em ciclo delicado</li>
+        <li>Não usar alvejantes</li>
+        <li>Secar à sombra para preservar a tonalidade</li>
+        <li>Passar com ferro em temperatura baixa</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Great Works - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const nome = urlParams.get('nome');
+    const preco = urlParams.get('preco');
+    const imagem = urlParams.get('imagem');
+
+    document.getElementById('produtoNome').textContent = nome;
+    document.getElementById('produtoPreco').textContent = preco;
+    document.getElementById('produtoImagem').src = imagem;
+
+    const botaoComprar = document.getElementById('botaoComprar');
+    botaoComprar.setAttribute('data-nome', nome);
+    botaoComprar.setAttribute('data-preco', preco);
+
+    botaoComprar.addEventListener('click', function (e) {
+      e.preventDefault();
+      const selecionado = document.querySelector('.tamanhos button.selecionado');
+      const tamanho = selecionado ? selecionado.textContent : 'Tamanho não selecionado';
+      adicionarAoCarrinho(`${nome} (Tam: ${tamanho})`, preco);
+    });
+  </script>
+</body>
+</html>

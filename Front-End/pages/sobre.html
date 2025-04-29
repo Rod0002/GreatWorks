@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sobre a Marca - Great Works</title>
+  <link rel="shortcut icon" href="GW logo tamanhos/GW pequeno.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Cabeçalho com carrinho -->
+  <div id="notificacao" class="notificacao">Item adicionado ao carrinho!</div>
+  <header>
+    <div class="logo">GREAT WORKS</div>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+    <button id="cartButton">🛒<span id="cartCount" class="cart-count">0</span></button>
+  </header>
+
+  <!-- Banner sobre a marca -->
+  <section class="sobre-banner" data-aos="fade-in">
+    <img src="modelos GW/Modelo GW 1.jpg" alt="Great Works" />
+  </section>
+
+  <!-- Texto sobre a marca -->
+  <section class="sobre">
+    <div class="container" data-aos="fade-up">
+      <h1>Sobre a Great Works</h1>
+      <p>
+        A <strong>Great Works</strong> nasceu com o propósito de levar estilo, atitude e autenticidade para quem vive a cultura das ruas. Mais do que roupas, criamos identidade. Cada estampa carrega uma mensagem, cada coleção conta uma história. Somos uma marca feita por e para quem acredita que vestir bem é também se expressar.
+      </p>
+      <p>
+        Com influências do hip hop, skate, arte urbana e do lifestyle das grandes cidades, desenvolvemos peças únicas que misturam conforto, design e ousadia. Nosso compromisso é com a qualidade, com a representatividade e com a liberdade de ser quem você é.
+      </p>
+      <p>
+        Vista Great Works. Faça parte do movimento.
+      </p>
+    </div>
+  </section>
+
+  <!-- Linha do tempo -->
+  <section class="timeline" data-aos="fade-up">
+    <h2>Nosso Caminho</h2>
+    <ul>
+      <li><span>2024</span> Fundação da Great Works e lançamento da primeira coleção.</li>
+      <li><span>2025</span> Expansão do e-commerce e chegada da nova coleção “Raízes Urbanas”.</li>
+    </ul>
+  </section>
+
+  <!-- Redes sociais -->
+  <section class="redes" data-aos="fade-up">
+    <h2>Nos acompanhe</h2>
+    <div class="redes-links">
+      <a href="#" target="_blank">📸 Instagram</a>
+      <a href="#" target="_blank">🎵 TikTok</a>
+      <a href="#" target="_blank">📘 Facebook</a>
+    </div>
+  </section>
+
+  <!-- Carrinho lateral -->
+  <div id="cartSidebar" class="cart-sidebar">
+    <h3>Seu Carrinho</h3>
+    <div id="cartContent"></div>
+    <div id="cartTotal" class="cart-total">Total: R$ 0,00</div>
+    <button id="closeCart">Fechar</button>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Great Works - Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      offset: 100,
+      once: true
+    });
+  </script>
+</body>
+</html>

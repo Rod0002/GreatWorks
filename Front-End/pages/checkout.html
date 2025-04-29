@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Checkout – Loja de Camisetas</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Finalizar Pedido</h1>
+  </header>
+
+  <main>
+    <!-- Resumo do carrinho -->
+    <section id="orderSummary">
+      <h2>Seu Carrinho</h2>
+      <div id="cartContent"></div>
+      <p id="cartTotal">Total: R$ 0,00</p>
+    </section>
+
+    <!-- Formulário de endereço -->
+    <section id="addressSection">
+      <h2>Endereço de Entrega</h2>
+      <form id="addressForm">
+        <label>Nome completo:<br/>
+          <input type="text" name="nome" required />
+        </label><br/>
+        <label>Endereço:<br/>
+          <input type="text" name="endereco" required />
+        </label><br/>
+        <label>Cidade/Estado:<br/>
+          <input type="text" name="cidade" required />
+        </label><br/>
+        <label>CEP:<br/>
+          <input type="text" name="cep" required />
+        </label><br/>
+      </form>
+    </section>
+
+    <!-- Botão de confirmação -->
+    <button id="checkoutButton">Confirmar e Pagar</button>
+  </main>
+
+  <script type="module" src="../js/script.js"></script>
+</body>
+</html>

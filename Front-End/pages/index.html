@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Great Works</title>
+  <link rel="shortcut icon" href="GW logo tamanhos/GW pequeno.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Notificação -->
+  <div id="notificacao" class="notificacao">Item adicionado ao carrinho!</div>
+
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo">GREAT WORKS</div>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="header-icons">
+      <div id="boasVindas" class="boas-vindas"></div>
+      <a href="login.html" id="loginButton" title="Fazer login">👤</a>
+      <button id="cartButton">🛒<span id="cartCount" class="cart-count">0</span></button>
+    </div>
+  </header>
+  <!-- Banner com parallax -->
+  <section class="banner parallax">
+    <div class="banner-content" data-aos="fade-up">
+      <h1>Chegue com Estilo</h1>
+      <button onclick="document.querySelector('.produtos').scrollIntoView({ behavior: 'smooth' })">
+        Ver Coleção
+      </button>
+    </div>
+  </section>
+
+  <!-- Seção de Novidades -->
+  <section class="produtos">
+    <h2 data-aos="fade-right">Novidades</h2>
+    <div class="grid-produtos">
+      <div class="produto" data-aos="zoom-in">
+        <img src="camisas GW/GW coringa.jpg" alt="GW Coringa" />
+        <h3>GW Coringa</h3>
+        <p>R$ 99,90</p>
+        <a class="botao-compra" href="produto.html?nome=GW%20Coringa&preco=R$%2099,90&imagem=camisas%20GW/GW%20coringa.jpg">
+          Ver Produto
+        </a>
+      </div>
+
+      <div class="produto" data-aos="zoom-in" data-aos-delay="100">
+        <img src="camisas GW/GW adventure.jpg" alt="GW Adventure" />
+        <h3>GW Adventure</h3>
+        <p>R$ 109,90</p>
+        <a class="botao-compra" href="produto.html?nome=GW%20Adventure&preco=R$%20109,90&imagem=camisas%20GW/GW%20adventure.jpg">
+          Ver Produto
+        </a>
+      </div>
+
+      <div class="produto" data-aos="zoom-in" data-aos-delay="200">
+        <img src="camisas GW/GW cactus.jpg" alt="GW Cactus" />
+        <h3>GW Cactus</h3>
+        <p>R$ 89,90</p>
+        <a class="botao-compra" href="produto.html?nome=GW%20Cactus&preco=R$%2089,90&imagem=camisas%20GW/GW%20cactus.jpg">
+          Ver Produto
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Camisas com Desconto -->
+  <section class="ofertas">
+    <h2 data-aos="fade-right">Camisas com Desconto</h2>
+    <div class="grid-produtos">
+      <div class="produto" data-aos="zoom-in">
+        <img src="camisas GW/GW mustang.jpg" alt="GW Mustang" />
+        <h3>GW Mustang</h3>
+        <p>
+          <span class="preco-antigo">R$ 129,90</span>
+          <span class="preco-novo">R$ 99,90</span>
+        </p>
+        <a class="botao-compra" href="produto.html?nome=GW%20Mustang&preco=R$%2099,90&imagem=camisas%20GW/GW%20mustang.jpg">
+          Ver Produto
+        </a>
+      </div>
+
+      <div class="produto" data-aos="zoom-in" data-aos-delay="100">
+        <img src="camisas GW/GW pink cat.jpg" alt="GW Pink Cat" />
+        <h3>GW Pink Cat</h3>
+        <p>
+          <span class="preco-antigo">R$ 119,90</span>
+          <span class="preco-novo">R$ 89,90</span>
+        </p>
+        <a class="botao-compra" href="produto.html?nome=GW%20Pink%20Cat&preco=R$%2089,90&imagem=camisas%20GW/GW%20pink%20cat.jpg">
+          Ver Produto
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrinho lateral -->
+  <div id="cartSidebar" class="cart-sidebar">
+    <h3>Seu Carrinho</h3>
+    <div id="cartContent"></div>
+    <div id="cartTotal" class="cart-total">Total: R$ 0,00</div>
+    <button id="closeCart">Fechar</button>
+  </div>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Great Works - Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      offset: 100,
+      once: true
+    });
+  </script>
+
+</body>
+</html>
